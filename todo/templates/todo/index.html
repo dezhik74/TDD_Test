@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <title>ToDo App</title>
+</head>
+<body>
+    <div class="container is-size-3 mb-3">
+        <h1>Текущие дела</h1>
+{#        <form action="post">#}
+{#            <input type="text" id="todo_item" placeholder="Какое дело планируем">#}
+{#            <button class="button">Запланировать</button>#}
+{#        </form>#}
+        <form method="POST">
+            {% csrf_token %}
+            <div class="field mt-3">
+                <label class="label">Дело</label>
+                <div class="control">
+                    <input class="input" id="add_todo" type="text" placeholder="Какое дело планируем...">
+                </div>
+            </div>
+            <div class="field is-grouped">
+                <div class="control">
+                    <button class="button is-link">Запланировать</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

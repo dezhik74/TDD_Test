@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "tdd-test"
+version = "0.1.0"
+description = "test django project for learm TDD concept"
+authors = ["dezhik"]
+readme = "README.md"
+packages = [{include = "tdd_test"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+Django = "^4.2.4"
+pytest = "^7.4.0"
+pytest-django = "^4.5.2"
+selenium = "^4.11.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "config.settings"
+python_files = "tests.py test_*.py *_tests.py"
+addopts = "--liveserver localhost:8080"
